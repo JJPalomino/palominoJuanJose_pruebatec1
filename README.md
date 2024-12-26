@@ -24,3 +24,4 @@ utilizando JPA (Java Persistence API) para interactuar con una base de datos.
 
 7. ## Uso
 Al ejecutar la aplicación, se presentará un menú en consola donde podrás seleccionar las opciones para realizar las operaciones CRUD:
+![Captura de pantalla del sistema](Captura de pantalla 2024-12-26 103245.png)
