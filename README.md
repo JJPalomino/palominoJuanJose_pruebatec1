@@ -14,7 +14,7 @@ utilizando JPA (Java Persistence API) para interactuar con una base de datos.
 - JDK 17
 - MySQL (o base de datos similar)
 
-- ## Instalación
+## Instalación
 1. Clona este repositorio:  https://github.com/JJPalomino/palominoJuanJose_pruebatec1.git
 2. Navega al directorio del proyecto: palominoJuanJose_pruebatec1
 3. Importa el proyecto en tu IDE preferido (IntelliJ IDEA, Eclipse, etc.).
@@ -22,15 +22,32 @@ utilizando JPA (Java Persistence API) para interactuar con una base de datos.
 5. Crea la base de datos `empleados` usando el archivo SQL proporcionado (ver más abajo).
 6. Ejecuta el proyecto y prueba las funcionalidades a través del menú interactivo en consola.
 
-7. ## Uso
-Al ejecutar la aplicación, se presentará un menú en consola donde podrás seleccionar las opciones para realizar las operaciones CRUD:
+## Configurar la Base de Datos
+- Instala y configura MySQL.
+- La base de datos está configurada para conectarse por el `puerto 3309`.
+- Crea la base de datos empleados utilizando el archivo proporcionado `empleados.sql`.
+
+##Configura la aplicación
+- Asegúrate de tener instalado JDK 17 y un IDE como NetBeans o IntelliJ.
+- Modifica el archivo `persistence.xml` en la carpeta `META-INF` con tus credenciales de base de datos:
+```
+<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/empleados" />
+<property name="javax.persistence.jdbc.user" value="tuUsuario" />
+<property name="javax.persistence.jdbc.password" value="tuContraseña" />
+```
+ 
+## Uso
+- Compila y ejecuta el archivo principal de la aplicación (Main.java).
+- Al ejecutar la aplicación, se presentará un menú en consola donde podrás seleccionar las opciones para realizar las operaciones CRUD:
 ![Captura de pantalla 2024-12-26 103245](https://github.com/user-attachments/assets/a7d9f8ba-5bb2-4575-a0c7-5f9b1859e6e7)
 
-Una vez ejecutada la aplicación, el usuario puede navegar por los diferentes menus y elegir las opciones que necesite.
+- Una vez ejecutada la aplicación, el usuario puede navegar por los diferentes menus y elegir las opciones que necesite.
 
-## Importante
-La base de datos está configurada para conectarse por el `puerto 3309`.
-No tiene contraseña
+### Cómo Probar la Aplicación
+- Prueba CRUD: Ingresa empleados, actualiza sus datos, y verifica la persistencia en la base de datos.
+- Prueba de Búsqueda: Realiza búsquedas por cargo para validar la funcionalidad.
+- Prueba de Validaciones: Intenta ingresar datos inválidos o incompletos y verifica los mensajes de error.
+- Manejo de Excepciones: Intenta eliminar empleados inexistentes o agregar duplicados para confirmar la gestión adecuada de errores.
 
 ## Supuestos
 
