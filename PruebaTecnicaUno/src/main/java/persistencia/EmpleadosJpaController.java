@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import logica.Empleados;
@@ -108,6 +109,19 @@ public class EmpleadosJpaController implements Serializable {
             em.close();
         }
     }
+    
+    //Método creado que hace la consulta por cargo
+    public List<Empleados> findEmpleadosByCargo(String cargo){
+        EntityManager em = getEntityManager();
+        try {
+            String consultaJpql = "SELECT e FROM Empleados e WHERE e.cargo = :cargo";
+            TypedQuery<Empleados> query = em.createQuery(consultaJpql,Empleados.class);
+            query.setParameter("cargo", cargo);
+            return query.getResultList();           
+        } finally{
+            em.close();
+        }
+    }
 
     public Empleados findEmpleados(int id) {
         EntityManager em = getEntityManager();
@@ -130,5 +144,7 @@ public class EmpleadosJpaController implements Serializable {
             em.close();
         }
     }
+    
+    
     
 }

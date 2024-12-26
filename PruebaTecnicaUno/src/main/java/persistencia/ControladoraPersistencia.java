@@ -41,4 +41,10 @@ public class ControladoraPersistencia {
     public Empleados buscarEmpleadosPorId(int id){
         return empleadosJpa.findEmpleados(id);
     }
+    
+    //Filtrar empleados por cargo
+    
+    public List<Empleados> imprimirEmpladosByCargo(String cargo){
+        return empleadosJpa.findEmpleadosByCargo(cargo);
+    }
 }

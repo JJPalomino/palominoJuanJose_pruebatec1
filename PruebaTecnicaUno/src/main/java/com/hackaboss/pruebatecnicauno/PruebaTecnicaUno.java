@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import logica.Empleados;
-
 import persistencia.ControladoraPersistencia;
 
 public class PruebaTecnicaUno {
@@ -59,15 +58,16 @@ public class PruebaTecnicaUno {
                     
                 case 4:
                     menuGestion.menuMostrarEmpleados();
-                        List<Empleados> listaEmpleados = controlPersis.imprimirEmpleados();
+                    List<Empleados> listaEmpleados = controlPersis.imprimirEmpleados();
                     for (Empleados emp : listaEmpleados) {
                         System.out.println("Empleados: " + emp.getNombre());
-        
-         }
+                    }
                     break;
                     
                 case 5:
                     menuGestion.menuBuscarPorCargo();
+                    menuValidaciones.validarImpresionByCargo();
+                    
                     break;
                     
                 case 6:

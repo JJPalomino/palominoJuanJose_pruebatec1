@@ -1,7 +1,6 @@
 
 package com.hackaboss.pruebatecnicauno;
 
-import static com.hackaboss.pruebatecnicauno.MenuGestionEmpleados.tecladoScanner;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeParseException;
@@ -284,6 +283,31 @@ public class MenuValidaciones {
         }  
     }
     
+    public void validarImpresionByCargo(){
+        Scanner teclado = tecladoScanner();
+                System.out.println("------------------------------------------------------------------------------");
+                System.out.println("Ingrese el cargo del empleado:                                                ");
+                String buscarByCargo = teclado.nextLine();
+                System.out.println("------------------------------------------------------------------------------");
+        ControladoraPersistencia controladora = instanciaControladoraPersis();
+        List<Empleados> empleados = controladora.imprimirEmpladosByCargo(buscarByCargo);
+        
+        if (empleados != null && !empleados.isEmpty()) {
+             for (Empleados empleado : empleados) {
+                 System.out.println("ID: " + empleado.getId());
+                 System.out.println("Nombre: " + empleado.getNombre());
+                 System.out.println("Apellido: " + empleado.getApellido());
+                 System.out.println("Cargo: " + empleado.getCargo());
+                 System.out.println("Salario: " + empleado.getSalario());
+                 System.out.println("Fecha de Inicio: " + empleado.getFechaInicio());
+                 System.out.println("----------------------------");
+             }
+         } else {
+             System.out.println("No se encontraron empleados con el cargo: " + buscarByCargo);
+         }
+        
+    }
+    
     public static void recorrerLista(List<Empleados>listaEmpleados){
         for(Empleados emp:listaEmpleados){
             System.out.println(emp.toString());
@@ -308,6 +332,7 @@ public class MenuValidaciones {
         }
         return instEmpleados;
     }
+    
     public ControladoraPersistencia instanciaControladoraPersis(){
         if (instaControladoraPersis == null){
             instaControladoraPersis = new ControladoraPersistencia();
