@@ -24,4 +24,30 @@ utilizando JPA (Java Persistence API) para interactuar con una base de datos.
 
 7. ## Uso
 Al ejecutar la aplicación, se presentará un menú en consola donde podrás seleccionar las opciones para realizar las operaciones CRUD:
-![Captura de pantalla del sistema](Captura de pantalla 2024-12-26 103245.png)
+![Captura de pantalla 2024-12-26 103245](https://github.com/user-attachments/assets/a7d9f8ba-5bb2-4575-a0c7-5f9b1859e6e7)
+
+Una vez ejecutada la aplicación, el usuario puede navegar por los diferentes menus y elegir las opciones que necesite.
+
+## Importante
+La base de datos está configurada para conectarse por el `puerto 3309`.
+No tiene contraseña
+
+## Supuestos
+
+- La base de datos está correctamente configurada y contiene la tabla `empleado` con las columnas necesarias (nombre, apellido, cargo, salario, fecha_inicio).
+- El menú en consola es la única forma de interactuar con la aplicación.
+- La aplicación maneja errores básicos como la duplicación de empleados o la búsqueda de empleados inexistentes.
+- El ingreso de todos los datos del empleado es obligatorio.
+- La forma de interactuar con el menú es a travez de `numeros`. 
+- Para evitar obligar al usuario a ingresar la fecha en fomrato (yyyy/mm/dd), se pediran los datos de manera independeiente.
+- Al borrar un empleado se asume que esta acción no podrá retornarse en un futuro.
+- Las `ID` de los empleados son generadas automaticamente.
+
+## Entregables
+- Código fuente completo de la aplicación.
+- Archivo SQL para crear la base de datos `empleados`.
+- Documento con instrucciones para ejecutar y probar la aplicación.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
